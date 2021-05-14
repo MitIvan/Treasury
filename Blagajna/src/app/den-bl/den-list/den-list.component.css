@@ -1,0 +1,10 @@
+.list {
+  height: 600px;
+  overflow: auto;
+}
+
+
+
+@media print{
+    .dontPrint{display:none !important;}
+  }

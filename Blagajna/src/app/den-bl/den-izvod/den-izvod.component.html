@@ -1,0 +1,81 @@
+<h2 *ngIf="izvod">Извод Број: {{izvod.id}}</h2>
+<div class="row">
+    <div class="col-xs-12">
+
+        <h3 *ngIf="kasaPrimiAvans.length > 0">Каса прими за вратен аванс:</h3>
+        <ul *ngFor="let doc of kasaPrimiAvans; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+        <h3 *ngIf="kasaPrimiBanka.length > 0">Каса прими за подигнати средства до банка:</h3>
+        <ul *ngFor="let doc of kasaPrimiBanka; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+        <h3 *ngIf="kasaIspPatarini.length > 0">Каса исплати за патарини:</h3>
+        <ul *ngFor="let doc of kasaIspPatarini; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+        <h3 *ngIf="kasaIspTerminal.length > 0">Каса исплати за терминал/шпедиција</h3>
+        <ul *ngFor="let doc of kasaIspTerminal; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+        <h3 *ngIf="kasaIspDrOsnov.length > 0">Каса исплати по друг основ</h3>
+        <ul *ngFor="let doc of kasaIspDrOsnov; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+        <h3 *ngIf="kasaIspAvans.length > 0">Каса исплати за аванс</h3>
+        <ul *ngFor="let doc of kasaIspAvans; let i = index">
+            <li>Документ .................... {{doc.id}}
+                <ul *ngFor="let smetka of doc.denSmetki; let i = index">
+                    <li>Сметка број: {{smetka.smetkaInfo}} ................... {{smetka.smetkaTotal}}</li>
+                </ul>
+            </li>
+            <li>Вкупно:................... {{doc.totalSmetki}}</li>
+        </ul>
+
+    </div>
+</div>
+<hr>
+<div class="row"  >
+    <div class="col-xs-12">
+        <p>Почетно Салдо {{pocetnoSaldo}} денари</p>
+        <p>Вкупен Прием  {{vkupenPriem}} денари</p>
+        <p>Вкупна Исплата {{vkupnaIsplata}} денари</p>
+        <p>Салдо {{saldo}} денари</p>
+    </div>
+</div>
+<div class="row dontPrint" *ngIf="showAddIzvodbutton" >
+    <div class="col-xs-12">
+        <button class="btn btn-primary"  *ngIf="!izvod.finalIzvod"(click)="onAddIzvod()">Прокнижи Извод</button>
+        <button class="btn btn-primary" *ngIf="izvod.finalIzvod" (click)="onPrintIzvod()">Листај  Извод</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210129190712_doc.cs" />
+    <Compile Remove="Migrations\20210129190712_doc.Designer.cs" />
+    <Compile Remove="Migrations\20210129191322_doc.cs" />
+    <Compile Remove="Migrations\20210129191322_doc.Designer.cs" />
+    <Compile Remove="Migrations\20210129191610_doc.cs" />
+    <Compile Remove="Migrations\20210129191610_doc.Designer.cs" />
+    <Compile Remove="Migrations\20210129191659_doc.cs" />
+    <Compile Remove="Migrations\20210129191659_doc.Designer.cs" />
+    <Compile Remove="Migrations\20210130152922_new.cs" />
+    <Compile Remove="Migrations\20210130152922_new.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

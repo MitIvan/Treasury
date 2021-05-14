@@ -1,0 +1,96 @@
+
+        <form
+          [formGroup]="docForm"
+          (ngSubmit)="onSubmit()"
+          style="width: 800px; margin: auto;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="docType">Вид на документ:</label>
+                        <select 
+                          class="form-control" 
+                          id="docType"
+                          formControlName="vidDocument">
+                            <option value="1">Каса Исплати Патарини</option>
+                            <option value="2">Каса Исплати Патарини За Терминал/Шпедиција</option>
+                            <option value="3">Каса Исплати Патарини По Друг Основ</option>
+                            <option value="4">Каса Исплати За Аванс</option>
+                            <option value="5">Каса Прими За Вратен Аванс</option>
+                            <option value="6">Каса Прими Подигнати Средства Од Банка</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" >
+              <label class="form-label" for="peNumber">Пресметковна Единица:</label>
+              <div class="input-group mb-3">
+                <input (blur)="onGetVozilo()"
+                  id="peNumber" 
+                  type="text" 
+                  class="form-control"  
+                  aria-label="Recipient's username" 
+                  aria-describedby="basic-addon2"
+                  formControlName="peNumber">
+              </div>
+              <p>Возило:{{voziloIme}} </p>
+            </div>
+            <div class="row">
+              <label class="form-label" for="vrabotenMb">Матичен Број:</label>
+              <div class="input-group mb-3">
+                <input (blur)="onGetVraboten()"
+                  id="vrabotenMb" 
+                  type="text" 
+                  class="form-control"  
+                  aria-label="Recipient's username" 
+                  aria-describedby="basic-addon2"
+                  formControlName="vrabotenMb">
+              </div>
+              <p>Име и Презиме: {{vrabotenIme}}</p>
+            </div>
+            <div class="row">
+                <label for="note" class="form-label">Забелешка:</label>
+                <textarea 
+                  class="form-control" 
+                  id="note" 
+                  rows="3"
+                  formControlName="zabeleska"></textarea>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12" formArrayName="denSmetki">
+                <div class="row"
+                  *ngFor="let smetka of controls; let i = index" 
+                  [formGroupName]="i"
+                  style="margin-top: 10px;">
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" placeholder="Број на сметка"
+                        formControlName="smetkaInfo" >
+                  </div>
+                  <div class="col-sm-3">
+                    <input type="text" class="form-control" placeholder="dd.mm.yyyy"
+                      formControlName="smetkaDate">
+                  </div>
+                  <div class="col-sm-2">
+                    <input type="number" class="form-control" placeholder="Сума"
+                    formControlName="smetkaTotal">
+                  </div>
+                  <div class="col-sm-2">
+                    <button type="button" class="btn btn-danger" (click)="onDeleteSmetka(i)">X</button>
+                  </div>
+              </div>
+              <hr>
+                <div class="row">
+                  <div class="col-sm-10 ">
+                    <button type="button" class="btn btn-primary" (click)="onAddSmetka()">Нова Сметка</button>
+                  </div>
+                  <div class="col-sm-2 ">
+                    <button type="submit" class="btn btn-success" [disabled]="!docForm.valid">Зачувај</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+        </form>
+
+
+

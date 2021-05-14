@@ -1,0 +1,19 @@
+<div class="row" style="margin-top: 10px; margin-bottom: 10px;">
+    <div class="col-xs-12">
+        <button class="btn btn-secondary" (click)="onNewDoc()">Нова Исплата</button>
+    </div>
+</div>
+<div class="row list" >
+    <div class="col-xs-12">
+         <app-den-item
+            *ngFor="let docEl of documents; let i = index" 
+            [document]="docEl"
+            [index] = "i" >
+        </app-den-item> 
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-sm">
+            <h3 class="text-center mb-5">Каса Исплати / Kаса Прими</h3>    
+        </div>
+    </div>    
+    <div class="row justify-content-between">
+        <div class="col-3">
+            <p>Број на документ: {{id}}</p>
+        </div>
+        <div class="col-3">
+            <p>Датум: {{document.docDate}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <p>ВП: {{document.vidDocument}} {{vidDocument}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>П.Е: {{document.peNumber}} &nbsp; &nbsp; {{document.presmetkovnaName}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Денарски износ:&nbsp;  &nbsp; {{document.totalSmetki}} Денари</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Забелешка: {{document.zabeleska}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-between">
+        <div class="col-5">
+            <p>Благајник:</p>
+            <p>____________________________</p>
+        </div>
+        <div class="col-5">
+            <p>Платил/Примил: {{document.vrabotenFullName}}</p>
+            <p>____________________________</p>
+        </div>
+    </div>
+    <hr>
+    <div class="row dontPrint">
+        <div class="col-2">
+            <a class="btn btn-primary" (click)="onEditDoc()">Ажурирај</a>
+        </div>
+        <div class="col-8">
+            <a class="btn btn-info" (click)="onPrintKasa()">Испринтај</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-danger" (click)="onDeleteDoc()">Избриши</a>
+        </div>
+    </div>
+</div>
