@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DenBlComponent } from './den-bl/den-bl.component';
-import { DevBlComponent } from './dev-bl/dev-bl.component';
 import { KasaIspComponent } from './den-bl/kasa-isp/kasa-isp.component';
 import { DenIzvodComponent } from './den-bl/den-izvod/den-izvod.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,7 +15,7 @@ import { DenItemComponent } from './den-bl/den-list/den-item/den-item.component'
 import { DenBlService } from './den-bl/den-bl.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
-import { from } from 'rxjs';
+
 
 
 @NgModule({
@@ -24,7 +23,6 @@ import { from } from 'rxjs';
     AppComponent,
     HeaderComponent,
     DenBlComponent,
-    DevBlComponent,
     KasaIspComponent,
     DenIzvodComponent,
     PrintKasaComponent,
